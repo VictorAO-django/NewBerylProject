@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Beryl Account Login</title>
+        <link href="{% static 'Registration.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <main class="login">
+            <img id="logo" src="{% static '20220313_123654.png' %}">
+            <h3>Login</h3>
+            <form method="post" action="{% url 'login' %}" class="login">
+                {{ form.as_p }}
+                <input type="hidden" name="next" value="{{ next }}">
+                <input type="submit" value="Login">
+                {% csrf_token %}
+            </form>
+            <p>Don't have account yet? <a href="{% url 'register' %}">Sign Up.</a></p>
+        </main>
+    </body>
+</html>

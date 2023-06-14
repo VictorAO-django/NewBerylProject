@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Registration</title>
+        <link href="{% static 'Registration.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <main class="register">
+            <img id="logo" src="{% static '20220313_123654.png' %}">
+            <h3 class="register">Create an account with Beryl Surprise</h3>
+            <form method="post" action="" class="register">
+                {{ form.as_p }}
+                <input type="hidden" name="next" value="{{ next }}">
+                {% csrf_token %}
+                <input type="submit" value="Register">
+            </form>
+        </main>
+    </body>
+</html>
