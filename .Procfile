@@ -1,0 +1,1 @@
+web: gunicorn berylproject.wsgi -log-file -
