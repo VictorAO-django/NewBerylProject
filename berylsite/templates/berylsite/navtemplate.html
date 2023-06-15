@@ -11,15 +11,15 @@
 {% endblock greeting %}
 
 {% block userImg %}
-    {% ifequal detail.Gender 'M' %}
+    {% if detail.Gender == 'M' %}
         <img src="{% static 'male_user.png' %}" id="userImg">
     {% else %}
-        {% ifequal detail.Gender 'F' %}
+        {% if detail.Gender == 'F' %}
             <img src="{% static 'female_user.png' %}" id="userImg">
         {% else %}
             <img src="{% static 'no_user.png' %}" id="userImg">
-        {% endifequal %}
-    {% endifequal %}
+        {% endif %}
+    {% endif %}
 {% endblock userImg %}
 
 {% block userdetail %}
